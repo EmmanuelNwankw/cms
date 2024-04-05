@@ -16,4 +16,8 @@ class config {
         'login_cookie_name'  => 'hakdjri23418la', // Login cookie name
 
     ];
+
+    public function get($key){
+        return array_key_exists($key, self::$config)? self::$config[$key] : NULL;
+    }
 }
