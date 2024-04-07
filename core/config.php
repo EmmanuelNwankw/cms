@@ -17,7 +17,7 @@ class config {
 
     ];
 
-    public function get($key){
+    public static function get($key){
         return array_key_exists($key, self::$config)? self::$config[$key] : NULL;
     }
 }
