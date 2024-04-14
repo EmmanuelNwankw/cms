@@ -1,6 +1,6 @@
 <?php
 session_start();
-use \core\config;
+use \core\{config, router};
 
 //define constants
 define('PROOT', __DIR__);
@@ -18,5 +18,10 @@ spl_autoload_register(function($classname){
     }
 });
 
-$dbName = config::get('db_name');
-var_dump($dbName);
+$rootDir = config::get('root_dir');
+define('ROOT', $rootDir);
+
+$url = $_SERVER['REQUEST_URI'];
+$url = str_replace(ROOT, '', $url);
+$url = preg_replace('/(\?.+)/', '', $url);
+Router::route($url);

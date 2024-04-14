@@ -5,7 +5,7 @@ namespace core;
 class config {
     private static $config = [
         'version'            =>'0.0.1',
-        'root_dir'           =>'/cms',  // This will likely be / on a live server
+        'root_dir'           =>'/cms/',  // This will likely be / on a live server
         'default_controller' => 'blog', // The default home controller
         'default_layout'     => 'default',  // Default layout that is used
         'default_site_title' => 'Freeskills',  // Default site title
